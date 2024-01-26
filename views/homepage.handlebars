@@ -1,0 +1,16 @@
+<h2>Homepage</h2>
+
+{{#each blogs as |blog|}}
+<div>
+    <div class="blogTitle">
+        <a href="/api/blogs/:id">{{blog.name}}</a>
+    </div>
+    <div class="blogContent">
+        <p>{{blog.content}}</p>
+    </div>
+    <div class="blogDate">
+        <p>Posted on: {{blog.createdOn}}</p>
+    </div>
+</div>
+<br>
+{{/each}}

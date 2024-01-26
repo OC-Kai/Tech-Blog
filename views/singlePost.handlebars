@@ -1,0 +1,31 @@
+<h2>{{blog.name}}</h2>
+
+<div>
+    <div class="blogContent">
+        <p>{{blog.content}}</p>
+    </div>
+    <div class="blogDate">
+        <p>Created on {{blog.createdOn}} by {{blog.username}}</p>
+    </div>
+</div>
+<div>
+    {{#each comments as |comment|}}
+        <div>
+            <p>{{comment.username}}</p>
+        </div>
+        <div>
+            <p>{{comment.text}}</p>
+        </div>
+        <div>
+            <p>{{comment.createdOn}}</p>
+        </div>
+    {{/each}}
+</div>
+<form class="comment-form">
+    <div>
+        <input class="comment-box" type="text" placeholder="Add a comment..."/>
+    </div>
+    <div>
+        <button class="btn commentBtn">Submit</button>
+    </div>
+</form>
