@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
-//get all users
+// //get all users
 router.get("/", (req, res) => {
     User.findAll({
         attributes: {exclude: ["password"]},
@@ -45,7 +45,7 @@ router.get("/:id", (req, res) => {
 });
 
 //create new user
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
     User.create({
         username: req.body.username,
         password: req.body.password
@@ -57,6 +57,7 @@ router.post("/", (req, res) => {
         });
     });
 });
+
 
 //login user
 router.post("/login", (req, res) => {
